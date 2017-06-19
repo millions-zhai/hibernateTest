@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    
+ <hibernate-mapping>
+ 	
+ 	<class name="com.itheima.domain.Order" catalog="hibernateTest" table="orders">
+ 		<id name="id" column="id"><generator class="native"></generator></id>
+ 		<property name="money" column="money"></property>
+ 		<property name="receiverInfo" column="receiver_info"></property>
+ 		
+ 		<many-to-one name="c" class="com.itheima.domain.Customer" column="customer_id" cascade="save-update"></many-to-one>
+ 	</class>
+ 
+ </hibernate-mapping>   
+    
+    
+    
